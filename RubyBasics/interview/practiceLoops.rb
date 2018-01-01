@@ -68,11 +68,17 @@ def trak_star
 
 
 def anagrams(first, second)
-    
     return false if first.length != second.length
-    return true if first.length == second.length
-
+    # return true if first.length != second.length
+    # p first.length.count
+    
     first.length.times do |i|
+        if (first[i] != second[((second.length - 1) + i )])
+          return false
+        else
+        return true
+        end
+      end
 end
 
-puts anagrams("owl", "lwo")
+puts anagrams("owl", "lwod")
