@@ -29,3 +29,7 @@ puts "Is your calculated length even? #{string.length.even?}"
 # to find class
 # p "aa".class = String
 # p 3.class = Fixnum
+
+# This updates the time variable to the actual current time
+# time = Time.now
+# puts time

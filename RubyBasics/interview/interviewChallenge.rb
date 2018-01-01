@@ -3,11 +3,23 @@
 # 2. Write a Ruby method that determines if two words are anagrams of each other.  I look forward to seeing what you come up with!
 
 
-def pleaseCount
-    print 1,2,3,4,5
-end
+# 1. anwser
 
-pleaseCount
+def trak_star
+    arr = []
+    (1..100).each do |n|
+      if ((n % 3 == 0) && (n % 5 == 0))
+        arr << "FizzBuzz"
+      elsif (n % 3 == 0)
+        arr << "Fizz"
+      elsif (n % 5 == 0)
+        arr << "Buzz"
+      else
+        arr << n
+      end
+    end
+    return arr
+  end
 
+puts trak_star
 
-# irb
