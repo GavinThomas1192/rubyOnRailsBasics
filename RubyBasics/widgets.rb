@@ -1,0 +1,1 @@
+puts 'Welcome to the widgets store!'
