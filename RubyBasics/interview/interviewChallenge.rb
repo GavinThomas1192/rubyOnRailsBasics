@@ -23,3 +23,8 @@ def trak_star
 
 puts trak_star
 
+# 2. anwser
+
+def anagrams(first, second)
+    
+end

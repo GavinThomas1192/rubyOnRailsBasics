@@ -64,4 +64,15 @@ def trak_star
     return arr
   end
 
-puts trak_star
+# puts trak_star
+
+
+def anagrams(first, second)
+    
+    return false if first.length != second.length
+    return true if first.length == second.length
+
+    first.length.times do |i|
+end
+
+puts anagrams("owl", "lwo")
