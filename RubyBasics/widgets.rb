@@ -19,4 +19,4 @@ p anwser.class
 
 # We need to convert the anwser to a number to do math because gets always returns a string.
     
-puts "Your total price is #{anwser.to_i * 5} "
+puts "Your total price is $#{anwser.to_i * 10} "
