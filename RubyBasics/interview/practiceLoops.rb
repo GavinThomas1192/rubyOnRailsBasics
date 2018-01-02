@@ -72,10 +72,10 @@ def anagrams(first, second)
     removedWhitespaceFirst = first.gsub(/[^0-9A-Za-z]/, '').downcase
     removedWhitespaceSecond = second.gsub(/[^0-9A-Za-z]/, '').downcase
 
-    puts first, second
-    puts 'YOLOOOO'
-    puts removedWhitespaceFirst
-    puts removedWhitespaceSecond
+    # puts first, second
+    # puts 'YOLOOOO'
+    # puts removedWhitespaceFirst
+    # puts removedWhitespaceSecond
 
     # if not the same length auto disqualify
     return false if removedWhitespaceFirst.length != removedWhitespaceSecond.length
