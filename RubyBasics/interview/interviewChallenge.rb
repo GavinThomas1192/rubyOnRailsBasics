@@ -21,7 +21,7 @@ def trak_star
     return arr
   end
 
-puts trak_star
+# puts trak_star
 
 # 2. anwser
 
@@ -39,12 +39,10 @@ def anagrams(first, second)
     
     # Otherwise, if first letter of first string is same as last letter of second string for the length, we can assume its an annogram.
     removedWhitespaceFirst.length.times do |i|
-        if (removedWhitespaceFirst[i] != removedWhitespaceSecond[((removedWhitespaceSecond.length - 1) + i )])
-          return false
-        else
+        return false if (removedWhitespaceFirst[i] != removedWhitespaceSecond[((removedWhitespaceSecond.length - 1) - i )])
+        
         return true
-        end
       end
 end
 
-puts anagrams("Owl ", "!l  wo")
+puts anagrams("Owd", "dwo !dd")
