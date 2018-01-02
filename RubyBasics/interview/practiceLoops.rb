@@ -68,10 +68,20 @@ def trak_star
 
 
 def anagrams(first, second)
+    # .gsub(/\s+/, "")
+    # removedWhitespaceFirst = first.gsub(/\s+/, "").gsub!(/[!@%&"]/,'')
+
+    # removedWhitespaceSecond = second.gsub(/\s+/, "").gsub!(/[!@%&"]/,'')
+
+    # puts first, second
+    # puts 'YOLOOOO'
+    # puts removedWhitespaceFirst
+    # puts removedWhitespaceSecond
+
+    # if not the same length auto disqualify
     return false if first.length != second.length
-    # return true if first.length != second.length
-    # p first.length.count
     
+
     first.length.times do |i|
         if (first[i] != second[((second.length - 1) + i )])
           return false
@@ -81,4 +91,4 @@ def anagrams(first, second)
       end
 end
 
-puts anagrams("owl", "lwod")
+puts anagrams("Owl ", "lwo")
