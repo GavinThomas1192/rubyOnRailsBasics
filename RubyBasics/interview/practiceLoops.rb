@@ -68,26 +68,23 @@ def trak_star
 
 
 def anagrams(first, second)
-    # .gsub(/\s+/, "")
-    removedWhitespaceFirst = first.gsub(/[^0-9A-Za-z]/, '').downcase
-    removedWhitespaceSecond = second.gsub(/[^0-9A-Za-z]/, '').downcase
+    # This takes into account certain edge cases Ive picked. 
+    # This function will check if two strings are annograms of each other ignoring all whitespace and special characters, to allow comparison of complex sentences if user wishes. 
 
-    # puts first, second
-    # puts 'YOLOOOO'
-    # puts removedWhitespaceFirst
-    # puts removedWhitespaceSecond
+
+    removedWhitespaceFirst = first.gsub(/[^0-9A-Za-z]/, '').downcase
+
+    removedWhitespaceSecond = second.gsub(/[^0-9A-Za-z]/, '').downcase
 
     # if not the same length auto disqualify
     return false if removedWhitespaceFirst.length != removedWhitespaceSecond.length
     
-
+    # Otherwise, if first letter of first string is same as last letter of second string for the length, we can assume its an annogram.
     removedWhitespaceFirst.length.times do |i|
-        if (removedWhitespaceFirst[i] != removedWhitespaceSecond[((removedWhitespaceSecond.length - 1) + i )])
-          return false
-        else
+        return false if (removedWhitespaceFirst[i] != removedWhitespaceSecond[((removedWhitespaceSecond.length - 1) - i )])
+        
         return true
-        end
       end
 end
 
-puts anagrams("Owl ", "!l  wo")
+puts anagrams("Owd", "dwo !dd")
