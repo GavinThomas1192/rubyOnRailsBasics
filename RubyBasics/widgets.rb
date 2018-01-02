@@ -12,9 +12,12 @@ def price(quantity)
         price_per_unit = 8
         puts "DISCOUNT!!!!"
     end
-    if quantity < 100
-        price_per_unit = 10
+    if quantity >= 50 && quantity <= 99
+        price_per_unit = 9
         puts "NO DISCOUNT!!!"
+    end
+    if quantity < 50
+        price_per_unit = 10
     end
     quantity * price_per_unit
 end
