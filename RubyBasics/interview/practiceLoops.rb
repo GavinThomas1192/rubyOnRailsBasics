@@ -69,8 +69,8 @@ def trak_star
 
 def anagrams(first, second)
     # .gsub(/\s+/, "")
-    removedWhitespaceFirst = first.gsub(/[^0-9A-Za-z]/, '')
-    removedWhitespaceSecond = second.gsub(/[^0-9A-Za-z]/, '')
+    removedWhitespaceFirst = first.gsub(/[^0-9A-Za-z]/, '').downcase
+    removedWhitespaceSecond = second.gsub(/[^0-9A-Za-z]/, '').downcase
 
     puts first, second
     puts 'YOLOOOO'
@@ -78,11 +78,11 @@ def anagrams(first, second)
     puts removedWhitespaceSecond
 
     # if not the same length auto disqualify
-    return false if first.length != second.length
+    return false if removedWhitespaceFirst.length != removedWhitespaceSecond.length
     
 
-    first.length.times do |i|
-        if (first[i] != second[((second.length - 1) + i )])
+    removedWhitespaceFirst.length.times do |i|
+        if (removedWhitespaceFirst[i] != removedWhitespaceSecond[((removedWhitespaceSecond.length - 1) + i )])
           return false
         else
         return true
