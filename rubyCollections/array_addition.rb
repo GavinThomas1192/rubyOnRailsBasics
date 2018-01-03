@@ -3,6 +3,8 @@ grocery_list = ["Milk", "Eggs", "Bread"]
 grocery_list << "Carrots"
 
 grocery_list.push("Potatoes")
+
+
 # PUTS VALUE IN FRONT
 grocery_list.unshift("Ice Cream")
 
@@ -25,7 +27,8 @@ last_item = grocery_list.pop
 puts "Last Item #{last_item}"
 
 puts "after pop #{grocery_list}"
-# First item in array
+
+# GRABS First item in array
 puts "Shift #{grocery_list.shift}"
 
 # this captures the last two values from the array BUT DOES NOT REMOVE THEM
