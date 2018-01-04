@@ -19,22 +19,28 @@ def add_list_item
     return hash
 end
 
-def print_list(list)
-    puts "List: #{list['name']}"
-    puts "----"
-
-    list["items"].each do |item|
-        puts "Item: " + item['name']
-        puts "Quantity: " + item['quantity'].to_s
-        puts "----"
-    end
+def print_seperator(character="-")
+    puts character * 80
 end
 
-list = create_list()
-puts list.inspect
+def print_list(list)
+    puts "List: #{list['name']}"
+    print_seperator()
+    puts "\tHere are you items!"
 
+    list["items"].each do |item|
+        # the plus at the end needs to be on line one otherwise quanitity doesn't show up
+        puts "\tItem: " + item['name'] + "\t\t\t" +
+         "Quantity: " + item['quantity'].to_s
+        end
+        print_seperator()
+end
+
+
+list = create_list()
+puts "Great, lets add some items to the list"
+list["items"].push(add_list_item()) 
 list["items"].push(add_list_item())
 
-puts list.inspect
 
 print_list(list)
