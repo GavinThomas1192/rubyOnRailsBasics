@@ -17,6 +17,9 @@ puts "Hello #{name}, nice to meet you!"
 # \' inserts single quotes
 # \\ inserts a backslash \
 
+# creates blank line
+puts "----"
+
 puts "first line\nsecond line"
 puts "\tnew paragraph"
 puts "He said, \"Whoah.\""
