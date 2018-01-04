@@ -1,7 +1,8 @@
+#!/usr/bin/env ruby
 
 def github_auto
     commit_answer = ''
-    print "Commit Message?"
+    print "Commit Message? "
     commit_answer = gets.chomp
 
     `git add .`
