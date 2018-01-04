@@ -18,3 +18,4 @@ array.each do |item|
     added =  item +2 
     puts "#{item} + 2 = #{added}"
 end
+puts array.inspect
