@@ -16,6 +16,14 @@ class BankAccount
     def debit(desciption, amount)
         add_transaction(desciption, -amount)
     end
+
+    def balance 
+        balance = 0
+        @transactions.each do |transactions|
+            balance += transactions[:amount].to_i
+        end
+        balance
+    end
 end
 
 bank_account = BankAccount.new("Gavin Thomas")
@@ -23,4 +31,4 @@ bank_account = BankAccount.new("Gavin Thomas")
 bank_account.credit("Paycheck", 400)
 bank_account.debit('ice cream', 34)
 
-puts bank_account.inspect
+puts bank_account.balance
