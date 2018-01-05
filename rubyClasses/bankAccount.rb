@@ -20,9 +20,23 @@ class BankAccount
     def balance 
         balance = 0
         @transactions.each do |transactions|
-            balance += transactions[:amount].to_i
+            balance += transactions[:amount]
         end
         balance
+    end
+
+    def print_register
+        puts "#{name}'s Bank Account"
+
+        puts "Descriptions\tAmount"
+        @transactions.each do |transactions|
+            puts transactions[:desciption] + "\t" + sprintf("%0.2f", transactions[:amount].to_s)
+        end
+    end 
+
+    # this make sit so we can just call bank_account and NOT bank_account.balance, etc
+    def to_s
+        "Name: #{name}, Balance: #{sprintf("%0.2f", balance)}"
     end
 end
 
@@ -31,4 +45,6 @@ bank_account = BankAccount.new("Gavin Thomas")
 bank_account.credit("Paycheck", 400)
 bank_account.debit('ice cream', 34)
 
-puts bank_account.balance
+# no clue, but adds double float
+puts bank_account
+bank_account.print_register
