@@ -28,10 +28,13 @@ class BankAccount
     def print_register
         puts "#{name}'s Bank Account"
 
-        puts "Descriptions\tAmount"
+        puts "Description".ljust(30) + "Amount".rjust(10)
+        puts "-" * 60
         @transactions.each do |transactions|
-            puts transactions[:desciption] + "\t" + sprintf("%0.2f", transactions[:amount].to_s)
+            puts transactions[:desciption].ljust(30) + "\t" + sprintf("%0.2f", transactions[:amount]).rjust(10)
         end
+        puts "-" * 60
+        puts "Current Balance: ".ljust(30) + "#{sprintf("%0.2f", balance)}".rjust(10)
     end 
 
     # this make sit so we can just call bank_account and NOT bank_account.balance, etc
@@ -44,7 +47,8 @@ bank_account = BankAccount.new("Gavin Thomas")
 
 bank_account.credit("Paycheck", 400)
 bank_account.debit('ice cream', 34)
+bank_account.debit("Gas", 27.88)
 
 # no clue, but adds double float
-puts bank_account
+# puts bank_account
 bank_account.print_register
