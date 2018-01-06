@@ -1,17 +1,15 @@
 #!/usr/bin/env ruby
 
 def github_auto
+    branch = `git rev-parse --abbrev-ref HEAD`
     commit_answer = ''
     print "Commit Message? "
     commit_answer = gets.chomp
-
     `git add .`
     `git commit -m "#{commit_answer}"`
-    `git push origin master`
+    `git push origin #{branch}`
+    print "Pushed changes to #{branch} branch"
 end
 
 github_auto
 
-# testing
-# testing2
-# testing5
