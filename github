@@ -8,7 +8,9 @@ def github_auto
     `git add .`
     `git commit -m "#{commit_answer}"`
     `git push origin #{branch}`
-    print "Pushed changes to #{branch} branch"
+    puts "-" * 20
+    puts "Pushed changes to #{branch}" + "branch"
+    puts "-" * 20
 end
 
 github_auto
