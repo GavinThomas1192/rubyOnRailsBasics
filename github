@@ -9,7 +9,7 @@ def github_auto
     `git commit -m "#{commit_answer}"`
     `git push origin #{branch}`
     puts "-" * 20
-    puts "Pushed changes to ->#{branch}<- "
+    puts "Pushed changes to #{branch}" + "branch"
     puts "-" * 20
 end
 
