@@ -29,3 +29,12 @@ Things you may want to cover:
     * ``` updated_post.save ```
     * ``` updated_post.destroy ```
 
+* To generate new model
+
+* To generate migration (Add to model)
+    * ``` bin/rails generate migration AddBodyToPosts body:text ```
+    * `To apply changes`
+    * ``` bin/rails db:migrate ```
+
+
+
