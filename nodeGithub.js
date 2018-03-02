@@ -24,22 +24,21 @@ readyToCommit = branch => {
       if (error !== null) {
         console.log("exec error: " + error);
       }
+      exec(`git commit -m ${answer}`, function(error, response) {
+        //   console.log("Git commit -m...: " + response);
+        if (error !== null) {
+          console.log("exec error: " + error);
+        }
+      });
+      exec(`git push origin ${branch}`, function(error, response) {
+        //   console.log("Response: " + response);
+        if (error !== null) {
+          console.log("exec error: " + error);
+        }
+      });
     });
     rl.close();
 
-    exec(`git commit -m ${answer}`, function(error, response) {
-      //   console.log("Git commit -m...: " + response);
-      if (error !== null) {
-        console.log("exec error: " + error);
-      }
-    });
-
-    exec(`git push origin ${branch}`, function(error, response) {
-      //   console.log("Response: " + response);
-      if (error !== null) {
-        console.log("exec error: " + error);
-      }
-    });
     console.log("----------------------");
     console.log(`Pushed changes to ${branch}`);
     console.log("----------------------");
