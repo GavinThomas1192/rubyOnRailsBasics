@@ -47,15 +47,14 @@ committing = (branch, answer) => {
 
 pushing = branch => {
   exec("git push origin" + ` ${branch}`, function(error, response) {
-    console.log("Response from git push: " + branch + response);
+    console.log("Response from git push: " + response);
     if (error !== null) {
       console.log("exec error: " + error);
     }
+    console.log("----------------------");
+    console.log(`Pushed changes to ${branch}`);
+    console.log("----------------------");
   });
-
-  console.log("----------------------");
-  console.log(`Pushed changes to ${branch}`);
-  console.log("----------------------");
 };
 
 // executes `pwd`
