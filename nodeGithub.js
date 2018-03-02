@@ -42,8 +42,6 @@ readyToCommit = branch => {
     console.log("----------------------");
     console.log(`Pushed changes to ${branch}`);
     console.log("----------------------");
-
-    // console.log(`With this message ==>${answer}`);
   });
 };
 
