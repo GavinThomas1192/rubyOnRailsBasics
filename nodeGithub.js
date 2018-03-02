@@ -20,10 +20,11 @@ exec("git rev-parse --abbrev-ref HEAD", function(error, response) {
 readyToCommit = branch => {
   rl.question("Commit Message? ", function(answer) {
     exec("git add .", function(error, response) {
-      console.log("Response: " + response);
+      //   console.log("Response: " + response);
       if (error !== null) {
         console.log("exec error: " + error);
       }
+      rl.close();
       exec("git commit -m" + ` ${answer}`, function(error, response) {
         //   console.log("Git commit -m...: " + response);
         if (error !== null) {
@@ -37,7 +38,6 @@ readyToCommit = branch => {
         }
       });
     });
-    rl.close();
 
     console.log("----------------------");
     console.log(`Pushed changes to ${branch}`);
