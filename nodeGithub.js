@@ -21,8 +21,10 @@ exec("git rev-parse --abbrev-ref HEAD", function(error, response) {
 
 readyToCommit = branch => {
   rl.question("Commit Message? ", function(answer) {
-    exec("git add .", function(error, response) {
-      console.log("Response from git add: " + response);
+    exec("git add .", function(error, stdout, stderr) {
+      console.log("Response from git add: " + stdout);
+      console.log("Response from git add: " + stderr);
+
       if (error !== null) {
         console.log("exec error: " + error);
       }
