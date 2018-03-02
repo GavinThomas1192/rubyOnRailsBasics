@@ -34,17 +34,15 @@ readyToCommit = branch => {
 };
 
 committing = (branch, answer) => {
-  Promise.all(
-    exec("git commit -m" + ` ${answer}`, function(error, response) {
-      console.log("response from git commit: " + response);
-      if (error !== null) {
-        console.log("exec error: " + error);
-      }
-    })
-  ).then(() => {
-    console.log("calling pushing");
-    pushing(branch);
+  exec("git commit -m" + ` ${answer}`, function(error, response) {
+    console.log("response from git commit: " + response);
+    if (error !== null) {
+      console.log("exec error: " + error);
+    }
   });
+  console.log("calling pushing");
+
+  pushing(branch);
 };
 
 pushing = branch => {
