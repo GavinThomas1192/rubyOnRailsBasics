@@ -47,7 +47,7 @@ committing = (branch, answer) => {
 
 pushing = branch => {
   exec("git push origin" + ` ${branch}`, function(error, response) {
-    console.log("Response from git push: " + response);
+    console.log("Response from git push: " + branch + response);
     if (error !== null) {
       console.log("exec error: " + error);
     }
