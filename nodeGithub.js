@@ -19,16 +19,32 @@ exec("git rev-parse --abbrev-ref HEAD", function(error, response) {
 
 readyToCommit = branch => {
   rl.question("Commit Message? ", function(answer) {
-    console.log(`Pushed changes to ${branch}.`);
-    console.log(`With this message ==>${answer}`);
+    exec("git add .", function(error, response) {
+      console.log("Response: " + response);
+      if (error !== null) {
+        console.log("exec error: " + error);
+      }
+    });
     rl.close();
 
-    // child = exec("git add .", function(error, response) {
-    //   console.log("Response: " + response);
-    //   if (error !== null) {
-    //     console.log("exec error: " + error);
-    //   }
-    // });
+    exec(`git commit -m ${answer}`, function(error, response) {
+      //   console.log("Git commit -m...: " + response);
+      if (error !== null) {
+        console.log("exec error: " + error);
+      }
+    });
+
+    exec(`git push origin ${branch}`, function(error, response) {
+      //   console.log("Response: " + response);
+      if (error !== null) {
+        console.log("exec error: " + error);
+      }
+    });
+    console.log("----------------------");
+    console.log(`Pushed changes to ${branch}`);
+    console.log("----------------------");
+
+    // console.log(`With this message ==>${answer}`);
   });
 };
 
