@@ -6,4 +6,7 @@
 * SQL MAYBE
  * ``` pg_ctl -D /usr/local/var/postgres start ```
 
+* postgres on startup
+ * ``` brew services start postgresql ```
+
 ![](img/yay.png?raw=true)
