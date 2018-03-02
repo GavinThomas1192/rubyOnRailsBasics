@@ -22,7 +22,7 @@ exec("git rev-parse --abbrev-ref HEAD", function(error, response) {
 readyToCommit = branch => {
   rl.question("Commit Message? ", function(answer) {
     exec("git add .", function(error, response) {
-      //   console.log("Response: " + response);
+      console.log("Response from git add: " + response);
       if (error !== null) {
         console.log("exec error: " + error);
       }
@@ -35,7 +35,7 @@ readyToCommit = branch => {
 
 committing = (branch, answer) => {
   exec("git commit -m" + ` ${answer}`, function(error, response) {
-    //   console.log("Git commit -m...: " + response);
+    console.log("response from git commit: " + response);
     if (error !== null) {
       console.log("exec error: " + error);
     }
@@ -47,7 +47,7 @@ committing = (branch, answer) => {
 
 pushing = branch => {
   exec(`git push origin ${branch}`, function(error, response) {
-    //   console.log("Response: " + response);
+    console.log("Response from git push: " + response);
     if (error !== null) {
       console.log("exec error: " + error);
     }
