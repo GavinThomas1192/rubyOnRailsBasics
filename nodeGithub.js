@@ -33,17 +33,19 @@ readyToCommit = branch => {
   });
 };
 
-committing = (branch, answer) => {
-  exec("git commit -m" + ` ${answer}`, function(error, response) {
-    console.log("response from git commit: " + response);
-    if (error !== null) {
-      console.log("exec error: " + error);
-    }
-  });
+Promise.all(
+  (committing = (branch, answer) => {
+    exec("git commit -m" + ` ${answer}`, function(error, response) {
+      console.log("response from git commit: " + response);
+      if (error !== null) {
+        console.log("exec error: " + error);
+      }
+    });
+  })
+).then(() => {
   console.log("calling pushing");
-
   pushing(branch);
-};
+});
 
 pushing = branch => {
   exec("git push origin" + ` ${branch}`, function(error, response) {
