@@ -24,7 +24,7 @@ readyToCommit = branch => {
       if (error !== null) {
         console.log("exec error: " + error);
       }
-      exec(`git commit -m ${answer}`, function(error, response) {
+      exec("git commit -m" + `${answer}`, function(error, response) {
         //   console.log("Git commit -m...: " + response);
         if (error !== null) {
           console.log("exec error: " + error);
