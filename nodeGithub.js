@@ -14,6 +14,8 @@ exec("git rev-parse --abbrev-ref HEAD", function(error, response) {
   if (error !== null) {
     console.log("exec error: " + error);
   }
+  console.log("calling readyToCommit");
+
   readyToCommit(branch);
 });
 
@@ -24,6 +26,7 @@ readyToCommit = branch => {
       if (error !== null) {
         console.log("exec error: " + error);
       }
+      console.log("calling committing");
       committing(branch, answer);
       rl.close();
     });
@@ -37,6 +40,8 @@ committing = (branch, answer) => {
       console.log("exec error: " + error);
     }
   });
+  console.log("calling pushing");
+
   pushing(branch);
 };
 
